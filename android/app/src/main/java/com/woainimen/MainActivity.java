@@ -1,4 +1,4 @@
-package com.pastriesos;
+package com.lovegaodian;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle; 
