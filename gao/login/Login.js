@@ -59,7 +59,7 @@ class Login extends Component{
             contentContainerStyle={{alignItems:'center'}} 
              
             >
-                <ImageBackground source={require('../img/loginbg.png')} style={{
+                {/* <ImageBackground source={require('../img/loginbg.png')} style={{
                width:gao.w,height:gao.h*.35
            }}>
                  <Image source={require('../img/logo.png')} 
@@ -67,7 +67,7 @@ class Login extends Component{
                  marginLeft:'55%',
                  marginTop:gao.h*.18
                  }}  />
-                </ImageBackground>
+                </ImageBackground> */}
 
                 <View style={{width:gao.w,padding:20}}>
                 <Input placeholder='account number.'
@@ -104,12 +104,9 @@ class Login extends Component{
                 </TouchableOpacity>
   
                 <TouchableOpacity onPress={()=>{
-                    // Linking.openURL('https://shimo.im/docs/YrVGjGR66VGYCTp3')
-                    this.props.navigation.navigate('Xieyi')
-                }} style={{alignItems:'center'}}>
-                    <View style={{width:'90%'}}>
-                    <Text style={{fontSize:16,marginTop:20,color:'#BDC3C7'}}>Login represents that you have read and agreed to the `doughnut` agreement</Text>
-                    </View>
+                    Linking.openURL('https://shimo.im/docs/YrVGjGR66VGYCTp3')
+                }}>
+                    <Text style={{fontSize:18,marginTop:20,color:'#BDC3C7'}}>Login represents that you have read and agreed to the `doughnut` agreement</Text>
                 </TouchableOpacity>
                  
         

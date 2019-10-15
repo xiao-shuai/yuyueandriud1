@@ -4,22 +4,24 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer} from 'react-navigation';
 import Main from '../main/Main'
 import Shequ from '../shequ/Shequ'
-import My from '../my/My'
+// import My from '../my/My'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import {gao} from '../sty/sty'
 import Relese from '../main/Relese'
-import Login from '../login/Login'
-import New from '../login/New'
+// import Login from '../login/Login'
+// import New from '../login/New'
 import Mainxq from '../main/Mainxq'
-import Shequxq from '../shequ/Shequxq'
+// import Shequxq from '../shequ/Shequxq'
 import Sug from '../my/Sug'
 import My_relese from '../my/My_relese'
-import Xieyi from '../login/Xieyi'
+import Mainpro from '../main/Mainpro'
+import Shou from '../main/Shou'
 const SOME=createBottomTabNavigator(
     {
-        Main: Main,
-        Shequ:Shequ,
-        My:My,
+        Mainpro: Mainpro,
+        Relese:Relese,
+        Shou:Shou,
+        Sug:Sug,
         
       },
       {
@@ -28,14 +30,17 @@ const SOME=createBottomTabNavigator(
             const { routeName } = navigation.state;
            
             let iconName;
-            if (routeName === 'Main') {
-                 iconName = 'bank';
+            if (routeName === 'Mainpro') {
+                 iconName = 'home';
               // Sometimes we want to add badges to some icons. 
               // You can check the implementation below.
             //   IconComponent = HomeIconWithBadge; 
-            } else if (routeName === 'Shequ') {
-                 iconName = `charity`;
-            } else if (routeName==='My'){
+            } else if (routeName === 'Relese') {
+                 iconName = `cloud-outline`;
+            } else if (routeName==`Shou`){
+              iconName=`heart`
+            }
+            else if (routeName==='Sug'){
                  iconName=`account`
             }
     
@@ -60,13 +65,12 @@ const SOME=createBottomTabNavigator(
    })
     },
     Relese:{screen:Relese},
-    Login:{screen:Login},
-    New:{screen:New},
+   
+    // New:{screen:New},
     Mainxq:{screen:Mainxq},
-    Shequxq:{screen:Shequxq},
+    // Shequxq:{screen:Shequxq},
     Sug:{screen:Sug},
-    My_relese:{screen:My_relese},
-    Xieyi:{screen:Xieyi}
+    My_relese:{screen:My_relese}
 
    
   })   

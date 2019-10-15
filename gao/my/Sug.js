@@ -20,7 +20,7 @@ import {inject,observer} from 'mobx-react'
 @observer // 监听当前组件
 class Sug extends Component{
     static navigationOptions = {
-        title: 'feedback',
+        title: 'Feedback',
         headerStyle: {
             backgroundColor: gao.theme,
           },
@@ -50,6 +50,14 @@ subaa=()=>{
         const login=this.props.mbx.login
         return(
             <SafeAreaView style={{flex:1,alignItems:'center'}}>
+                <View style={{width:gao.w,height:gao.h*.1,
+                backgroundColor:gao.theme,
+                alignItems:'center',
+                justifyContent:'center'
+                }}>
+           <Text style={{fontSize:18,fontWeight:'500',color:'white'}}>Feedback</Text>
+            </View>
+
              <View style={{width:'90%',backgroundColor:'#E5E7E9',
              height:gao.h*.2,
              padding:20,
@@ -68,6 +76,9 @@ subaa=()=>{
                    this.subaa()
                }}
              />
+             <Text style={{color:gao.hui,padding:20}}>
+             If you have good suggestions or report violations of the app, please feedback here! We will verify the processing, thank you for your cooperation.
+             </Text>
 
             </SafeAreaView>
         )

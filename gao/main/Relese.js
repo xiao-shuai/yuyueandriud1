@@ -15,13 +15,14 @@ import {Button} from 'react-native-elements'
 import ImagePicker from 'react-native-image-picker';
 
 class Relese extends Component{
-    static navigationOptions = {
-        title: 'relese',
-        headerStyle: {
-            backgroundColor: gao.theme,
-          },
-          headerTintColor: '#fff',
-      };
+  static navigationOptions = {
+    title: 'Release',
+    headerStyle: {
+        backgroundColor: gao.theme,
+      },
+      headerTintColor: '#fff',
+  };
+   
     
     constructor(props){
        super(props)
@@ -94,13 +95,21 @@ class Relese extends Component{
         
         return (
         <SafeAreaView style={{flex:1,}}>
+          <View style={{width:gao.w,height:gao.h*.1,
+                backgroundColor:gao.theme,
+                alignItems:'center',
+                justifyContent:'center'
+                }}>
+           <Text style={{fontSize:18,fontWeight:'500',color:'white'}}>Publish works</Text>
+            </View>
           <View style={{
           width:'92%',
           height:gao.h*.25,
           backgroundColor:'#D7DBDD',
           marginTop:20,
           padding:10,
-          marginLeft:'4%'
+          marginLeft:'4%',
+          borderRadius:8
 
           }}>
           <TextInput style={{height:'100%'}} multiline={true} 
@@ -138,6 +147,9 @@ class Relese extends Component{
              this.up()
            }}
          />
+         <Text style={{marginTop:0,padding:20,color:'#A6ACAF'}}>
+         In order to ensure high quality content, the information you publish will not be displayed immediately, as long as it is audited by our background, it will appear in the recommended list. Please know, thank you.
+         </Text>
         
         </SafeAreaView>
         )

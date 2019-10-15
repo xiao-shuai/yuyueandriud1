@@ -30,7 +30,7 @@ exit_out=()=>{
     AsyncStorage.removeItem('ok')
 }
     render(){
-        const login=this.props.mbx.login
+        
         return(
             <SafeAreaView style={{flex:1}}>
             

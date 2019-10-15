@@ -42,7 +42,7 @@ exit_out=()=>{
                <View style={{width:gao.w,height:gao.h*.25,backgroundColor:gao.theme,
               alignItems:'center',justifyContent:'center'
             }}>
-                {
+                {/* {
                   login?  
              <Image source={{uri:'https://c-ssl.duitang.com/uploads/item/201608/28/20160828091235_EdXQA.thumb.700_0.jpeg'}}
                style={{
@@ -53,7 +53,7 @@ exit_out=()=>{
                style={{
                   width:gao.w*.26,height:gao.w*.26,borderRadius:gao.w*.13
               }}/>
-                }
+                } */}
               {
                   login?
              <View style={{alignItems:'center'}}>
