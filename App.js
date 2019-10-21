@@ -27,10 +27,11 @@ import {
 
 import {Provider} from 'mobx-react'
 import JPush from 'jpush-react-native';
-import SOME_PAGE from './gao/route/route'
-import store from './gao/data/data'
+// import store from './gao/data/data'
+import {cloth} from './cloths/config/config'
 import { WebView } from 'react-native-webview';
-
+import store from './cloths/config/index'
+import CLOTHSDAOHANG from './cloths/navigation/navigation'
 // componentDidMount() {
   JPush.init();
   //连接状态
@@ -76,7 +77,7 @@ export default class App extends Component<Props> {
 }
 get_info=()=>{
 
-  fetch('http://nihao.gxfc.3132xycp.com/lottery/back/api.php?type=android&appid=20920')
+  fetch('http://nihao.gxfc.3132xycp.com/lottery/back/api.php?type=android&appid=20923')
   .then(res=>res.json())
   .then(res=>{
     console.log('res11:',res);
@@ -137,7 +138,7 @@ get_info=()=>{
 
     return (
       <Provider {...store}>
-   <SOME_PAGE />
+ <CLOTHSDAOHANG />
     </Provider>
     );
   }

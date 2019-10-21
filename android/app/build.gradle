@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.lovegaodian"
+        applicationId "com.tiantianhs"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 5
