@@ -167,7 +167,7 @@ class Cloth extends  Component{
             this.props.navigation.navigate('Clothxq',{info:require('../img/btm2.png')})
         }}>
             <Image source={require('../img/btm2.png')} style={{
-                width:'100%',height:cloth.cloth_h*.2
+                width:cloth.cloth_w,height:cloth.cloth_h*.2
             }}/>
         </TouchableOpacity>
     </Swiper>

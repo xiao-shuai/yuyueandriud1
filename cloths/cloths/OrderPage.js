@@ -27,10 +27,17 @@ class OrderPage extends  Component{
     };
     
  }
-   
- componentWillMount(){
+ today=()=>{
+  const date = new Date();
   
-     
+  const fyear = date.getFullYear().toString();
+  const fmonth = (date.getMonth()+1).toString();
+  const fday = date.getDate().toString();
+  const aaafinal=fyear+'-'+fmonth+'-'+fday
+  this.setState({date:aaafinal,date2:aaafinal})
+} 
+ componentWillMount(){
+  this.today()   
  }
  onChange = (value) => {
     this.setState({ value });
