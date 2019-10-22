@@ -1,4 +1,4 @@
-package com.tiantianhs;
+package com.tiantianhss;
 
 import android.app.Application;
 import android.util.Log;

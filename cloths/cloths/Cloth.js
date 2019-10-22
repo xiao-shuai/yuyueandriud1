@@ -155,17 +155,17 @@ class Cloth extends  Component{
       </Text>
     </NoticeBar>
     
-    <Swiper style={{marginTop:20,height:cloth.cloth_h*.2}}>
+    <Swiper style={{marginTop:20,height:cloth.cloth_h*.2,width:cloth.cloth_w}}>
         <TouchableOpacity onPress={()=>{
             this.props.navigation.navigate('Clothxq',{info:require('../img/btm1.png')})
-        }}>
+        }} style={{width:cloth.cloth_w}}>
             <Image source={require('../img/btm1.png')} style={{
-                width:'100%',height:cloth.cloth_h*.2
+                width:cloth.cloth_w,height:cloth.cloth_h*.2
             }}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>{
             this.props.navigation.navigate('Clothxq',{info:require('../img/btm2.png')})
-        }}>
+        }} style={{width:cloth.cloth_w}}>
             <Image source={require('../img/btm2.png')} style={{
                 width:cloth.cloth_w,height:cloth.cloth_h*.2
             }}/>

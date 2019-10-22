@@ -1,4 +1,4 @@
-package com.tiantianhs;
+package com.tiantianhss;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle; 
