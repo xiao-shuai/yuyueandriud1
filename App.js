@@ -27,11 +27,13 @@ import {
 
 import {Provider} from 'mobx-react'
 import JPush from 'jpush-react-native';
-// import store from './gao/data/data'
-import {cloth} from './cloths/config/config'
+
 import { WebView } from 'react-native-webview';
-import store from './cloths/config/index'
-import CLOTHSDAOHANG from './cloths/navigation/navigation'
+
+
+import aac from './app/mommbx/mbindex'
+import Tymonlvy from './app/luyou'
+
 // componentDidMount() {
   JPush.init();
   //连接状态
@@ -137,8 +139,8 @@ get_info=()=>{
   }
 
     return (
-      <Provider {...store}>
- <CLOTHSDAOHANG />
+      <Provider {...aac}>
+ <Tymonlvy />
     </Provider>
     );
   }
