@@ -60,8 +60,7 @@ util.encode = function (_map, _content) {
 
                 <View style={{marginTop:20,backgroundColor:'white',height:zthui2.big_height*.8,padding:10}}>
                     <Text style={{marginTop:10,fontSize:17,lineHeight:25,color:zthui2.zthui2}}>
-               牛牛预约是惠众公司打造的一款在线预约APP，用来在线预约商务会谈，会议等活动，方便合理安排时间 提高工作效率。在使用过程中如果发现任何问题请联系我们！
-               
+               欢乐商务预约是宿州市海菲电子商务有限公司打造的一款在线预约APP，用来在线预约商务会谈，会议等活动，方便合理安排时间 提高工作效率。在使用过程中如果发现任何问题请联系我们！
                     </Text>
                 </View>
          

@@ -34,42 +34,40 @@ class Logg extends Component{
         this.setState({selectedIndex})
       }
       yyylkj=()=>{
-        console.log('denle:',this.state.monlogzh)
-        // AsyncStorage.setItem('ss','11')
-        //     this.props.navigation.reset([NavigationActions.navigate({ routeName: 'rroott' })], 0)
+       
+          if(this.state.acc==undefined){
+               this.refs.toast.show('请输入账号',1000)
+  
+          } else if(this.state.acc_mm==undefined){
+               this.refs.toast.show('请输入密码',1000)
+  
+          }else{
+            AsyncStorage.setItem('ss','11')
+            this.props.navigation.reset([NavigationActions.navigate({ routeName: 'rroott' })], 0)
+          }
+         
+         
+          
+          
+      }
+      
+      yyylkj2=()=>{
           if(this.state.monlogzh==undefined){
                this.refs.toast.show('请输入账号',1000)
   
           } else if(this.state.monlogmm==undefined){
-               this.refs.toast.show('请输入验证码',1000)
+               this.refs.toast.show('请输入密码',1000)
   
-          } else{
-            
+          }else if (this.state.monlogmm2!==this.state.monlogmm){
+            this.refs.toast.show('密码输入不一致',1000)
+          }else{
+            AsyncStorage.setItem('ss','11')
+            this.props.navigation.reset([NavigationActions.navigate({ routeName: 'rroott' })], 0)
           }
-         
-         
-          
-          
-      }
-      reggg=()=>{
-          if(this.state.qq_zc_zh==undefined){
-              return this.refs.toast.show('Please enter account number',1000)
-          }else if (this.state.qq_ww_zcpw==undefined){
-            return this.refs.toast.show('Please enter password',1000)
-          }else if (this.state.qq_ww_zcpw!==this.state.qq_ww_zcpw2){
-              return this.refs.toast.show('Password inconsistency',1000)
-          }
-          fetch('https://easy-mock.com/mock/5d27013085f8e619f910e282/jiayoumom/zhuche',
-    {method:'POST'})
-    .then(res=>res.json())
-    .then(res=>{})
-    .catch(eree=>{})
-          AsyncStorage.setItem('ss','11')
-          this.props.navigation.reset([NavigationActions.navigate({ routeName: 'rroott' })], 0)
-      }
-      
+               
+      } 
       ffforgit=()=>{
-      Alert.alert('提示','请发送CZMM到106913546789734进行修改密码',[{'text':'ok',onPress:()=>{}}])
+      Alert.alert('提示','请发送CZMM到106913546789734进行修改密码',[{'text':'知道了',onPress:()=>{}}])
       }
 
   
@@ -91,9 +89,6 @@ class Logg extends Component{
       }
 
     }, 1000);
-
-   
-  
     
   }   
   componentDidMount(){
@@ -166,9 +161,8 @@ class Logg extends Component{
      containerStyle={styles.iiii_ccc} 
      inputContainerStyle={{borderBottomWidth:0}}
      placeholder='请输入手机号码'
-     onChangeText={(monlogzh)=>{
-       console.log('111:',monlogzh)
-     this.setState({monlogzh})
+     onChangeText={(acc)=>{
+     this.setState({acc})
      }}
 
      />
@@ -176,24 +170,14 @@ class Logg extends Component{
 
      <Input inputStyle={{}}
      secureTextEntry={true}
-     onChangeText={(monlogmm)=>{
-     this.setState({monlogmm})
+     onChangeText={(acc_mm)=>{
+     this.setState({acc_mm})
      }}
-     containerStyle={[styles.iiii_ccc,{width:zthui2.big_width*.5}]} 
+     containerStyle={[styles.iiii_ccc]} 
      inputContainerStyle={{borderBottomWidth:0}}
-     placeholder='请输入验证码'
+     placeholder='请输入密码'
      />
-     <Button title={this.state.time} 
-     disabled={this.state.log_yzm_btn}
-     type={'outline'}
-    //  titleStyle
-     buttonStyle={{
-       marginTop:15,width:zthui2.big_width*.3,
-       borderColor:zthui2.zthui2
-      }} 
-     onPress={()=>{
-        this.dao()
-     }} />
+
      </View>
      
      <Button title='登录' buttonStyle={[{backgroundColor:zthui2.zhutisee,marginTop:20}]}
@@ -214,7 +198,7 @@ class Logg extends Component{
      
      containerStyle={styles.iiii_ccc} 
      inputContainerStyle={{borderBottomWidth:0}}
-     placeholder='请输入手机号码'
+     placeholder='请输入账号'
      onChangeText={(monlogzh)=>{
        console.log('111:',monlogzh)
      this.setState({monlogzh})
@@ -228,65 +212,32 @@ class Logg extends Component{
      onChangeText={(monlogmm)=>{
      this.setState({monlogmm})
      }}
-     containerStyle={[styles.iiii_ccc,{width:zthui2.big_width*.5}]} 
+     containerStyle={[styles.iiii_ccc]} 
      inputContainerStyle={{borderBottomWidth:0}}
-     placeholder='请输入验证码'
+     placeholder='请输入密码'
      />
-     <Button title={this.state.time} 
-     disabled={this.state.log_yzm_btn}
-     type={'outline'}
-    //  titleStyle
-     buttonStyle={{
-       marginTop:15,width:zthui2.big_width*.3,
-       borderColor:zthui2.zthui2
-      }} 
-     onPress={()=>{
-        this.dao()
-     }} />
+     
+     
      </View>
+     <Input inputStyle={{}}
+     secureTextEntry={true}
+     onChangeText={(monlogmm2)=>{
+     this.setState({monlogmm2})
+     }}
+     containerStyle={[styles.iiii_ccc]} 
+     inputContainerStyle={{borderBottomWidth:0}}
+     placeholder='再次确认密码'
+     />
      
      <Button title='注册' buttonStyle={[{backgroundColor:zthui2.zhutisee,marginTop:20}]}
        onPress={()=>{
-           this.yyylkj()
+           this.yyylkj2()
        }}
      />
      <View style={{width:zthui2.big_width*.95,flexDirection:'row',justifyContent:'space-between'}}>
-     {/* <Button title='' type='clear'/> */}
-     {/* <Button title='忘记密码 》》' type='clear' titleStyle={{color:zthui2.zthui2}} onPress={()=>{
-         this.ffforgit()
-     }}/> */}
+     
      </View>
-      {/* <Input inputStyle={{}}
-      onChangeText={(qq_zc_zh)=>{
-        this.setState({qq_zc_zh})
-      }}
-      containerStyle={styles.iiii_ccc} 
-      inputContainerStyle={{borderBottomWidth:0}}
-      placeholder='请输入账号'
-      />
-      <Input inputStyle={{}}
-      onChangeText={(qq_ww_zcpw)=>{
-        this.setState({qq_ww_zcpw})
-      }}
-      secureTextEntry={true}
-      containerStyle={styles.iiii_ccc} 
-      inputContainerStyle={{borderBottomWidth:0}}
-      placeholder='请输入密码'
-      />
-      <Input inputStyle={{}}
-      onChangeText={(qq_ww_zcpw2)=>{
-          this.setState({qq_ww_zcpw2})
-      }}
-      secureTextEntry={true}
-      containerStyle={styles.iiii_ccc} 
-      inputContainerStyle={{borderBottomWidth:0}}
-      placeholder='确认密码'
-      />
-      <Button title='注册' buttonStyle={[{backgroundColor:zthui2.zhutisee,marginTop:20}]}
-       onPress={()=>{
-           this.reggg()
-       }}
-      /> */}
+      
        </View>
     }
 

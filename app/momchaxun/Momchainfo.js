@@ -47,7 +47,7 @@ class MONChainfo extends Component{
 
   prodd=()=>{
       this.setState({refreshing:true})
-      fetch('https://easy-mock.com/mock/5d27013085f8e619f910e282/jiayoumom/aboutuui')
+      fetch('https://www.fastmock.site/mock/bf8e3c1a546ac8d4d184d3b0670cf90c/lanqiudaren/record')
       .then(res=>res.json())
       .then(res=>{
           console.log('red',res)
