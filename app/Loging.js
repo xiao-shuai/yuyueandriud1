@@ -160,7 +160,7 @@ class Logg extends Component{
      
      containerStyle={styles.iiii_ccc} 
      inputContainerStyle={{borderBottomWidth:0}}
-     placeholder='请输入手机号码'
+     placeholder='请输入账号'
      onChangeText={(acc)=>{
      this.setState({acc})
      }}
